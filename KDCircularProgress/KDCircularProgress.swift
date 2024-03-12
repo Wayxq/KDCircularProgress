@@ -107,7 +107,7 @@ public class KDCircularProgress: UIView, CAAnimationDelegate {
     
     @IBInspectable public var trackStartAngle: Double = 0 {
         didSet {
-            trackStartAngle = Utility.mod(value: trackStartAngle, range: 360, minMax: (0, 360))
+            trackStartAngle = Utility.mod(value: trackStartAngle, range: CGFloat.pi * 2, minMax: (0, CGFloat.pi * 2))
             progressLayer.trackStartAngle = trackStartAngle
             progressLayer.setNeedsDisplay()
         }
@@ -115,7 +115,7 @@ public class KDCircularProgress: UIView, CAAnimationDelegate {
     
     @IBInspectable public var trackEndAngle: Double = 360 {
         didSet {
-            trackEndAngle = Utility.mod(value: trackEndAngle, range: 360, minMax: (0, 360))
+            trackEndAngle = Utility.mod(value: trackEndAngle, range: CGFloat.pi * 2, minMax: (0, CGFloat.pi * 2))
             progressLayer.trackEndAngle = trackEndAngle
             progressLayer.setNeedsDisplay()
         }
